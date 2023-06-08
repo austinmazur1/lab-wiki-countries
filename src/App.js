@@ -1,7 +1,16 @@
 import './App.css';
-import countries from './countries.json';
+import data from './countries.json';
+import Navbar from './components/Navbar';
+import CountriesList from './components/CountriesList';
+import { useState } from 'react';
 
 function App() {
-  return <div className="App">{console.log(countries)}</div>;
+
+const [countries, setCountries] = useState(data);
+
+  return <div className="App">
+    <Navbar />
+    <CountriesList countries={countries}/>
+  </div>;
 }
 export default App;
